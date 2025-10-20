@@ -18,10 +18,10 @@ module.exports = async function handler(req, res) {
     let response = '';
 
     if (message === 'hello' || message === 'hi') {
-      response = '=K Hello! I can help you deploy apps.\n\nCommands:\n- deploy\n- status\n- help';
+      response = 'Hello! I can help you deploy apps.\n\nCommands:\n- deploy\n- status\n- help';
     }
     else if (message === 'help') {
-      response = `> WhatsApp DevOps Bot
+      response = `WhatsApp DevOps Bot
 
 Commands:
 - deploy [project] [env]
@@ -32,17 +32,17 @@ Commands:
 Example: "deploy blog production"`;
     }
     else if (message === 'list') {
-      response = `=� Your Projects:
-1� demo-blog
-2� demo-api
+      response = `Your Projects:
+1. demo-blog
+2. demo-api
 
 Reply with "deploy [number or name] production"`;
     }
     else if (message.startsWith('deploy')) {
-      response = '=� Deployment started! (Coming soon in next step)';
+      response = 'Deployment started! (Coming soon in next step)';
     }
     else {
-      response = 'S Unknown command. Type "help" for available commands.';
+      response = 'Unknown command. Type "help" for available commands.';
     }
 
     // Send response back to WhatsApp
@@ -56,7 +56,7 @@ Reply with "deploy [number or name] production"`;
     console.error('Error:', error);
 
     const twiml = new twilio.twiml.MessagingResponse();
-    twiml.message('L Error processing your request. Please try again.');
+    twiml.message('Error processing your request. Please try again.');
 
     res.writeHead(200, { 'Content-Type': 'text/xml' });
     res.end(twiml.toString());
