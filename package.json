@@ -1,15 +1,18 @@
 {
   "name": "whatsapp-webhook",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "WhatsApp webhook for Twilio integration",
+  "main": "api/webhook.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["whatsapp", "twilio", "webhook"],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
+  "engines": {
+    "node": ">=18.x"
+  },
   "dependencies": {
     "@vercel/kv": "^3.0.0",
     "twilio": "^5.10.3"
